@@ -5,7 +5,7 @@
 int main(void) {
   float dollarAmount = 0.0f;
 
-  puts("This program will calculate how much a given amount is with a 5%% tax added.");
+  puts("This program will calculate how much a given amount is with a 5% tax added.");
   printf("Please enter the amount of dollars and cents: ");
   scanf("%f", &dollarAmount);
 
