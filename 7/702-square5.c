@@ -8,26 +8,24 @@
 
 int main(void) {
   int n;
-  short d;
+  unsigned char d;
 
   printf("This program prints a table of squares.\n");
   printf("Enter number of entries in table: ");
   scanf("%d", &n);
+  getchar(); // Clear \n from buffer
   
   d = 0;
 
   for (int i = 1; i <= n; i++) {
-    if (d < 24) {
-      printf("%10d%10d\n", i, i * i);  
-      d++;
-    } else {
-
-        // First iteration doesnt work, \n from scanf still in buffer maybe?
-        printf("Press enter to continue...");
+    if (d == 24) {
+      d = 0;
+      printf("Press enter to continue...");
         while (getchar() != '\n') 
           ;
-        d = 0;
     }
+    printf("%10d%10d\n", i, i * i);  
+    d++;
   }
 
   return 0;
